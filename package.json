@@ -1,8 +1,9 @@
 {
-  "name": "@fidm/asn1",
-  "description": "ASN.1/DER, PEM for Node.js",
+  "name": "@sardinefish/asn1",
+  "description": "ASN.1/DER, PEM for Browser",
   "authors": [
-    "Yan Qing <admin@zensh.com>"
+    "Yan Qing <admin@zensh.com>",
+    "SardineFish <sardine@live.cn>"
   ],
   "version": "1.0.4",
   "main": "build/index.js",
@@ -10,22 +11,18 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:fidm/asn1.git"
+    "url": "git@github.com:SardineFish/asn1.git"
   },
-  "homepage": "https://github.com/fidm/asn1",
-  "engines": {
-    "node": ">= 8"
-  },
+  "homepage": "https://github.com/SardineFish/asn1",
   "keywords": [
     "asn1",
     "ASN.1",
     "pem",
     "JavaScript",
-    "node"
+    "node",
+    "browser"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "@types/node": "^11.10.4",
     "istanbul": "^1.1.0-alpha.1",
     "tman": "^1.9.0",
     "ts-node": "^8.0.2",
@@ -35,7 +32,7 @@
     "typescript": "^3.3.3333"
   },
   "scripts": {
-    "build": "rm -rf build && tsc",
+    "build": "tsc",
     "docs": "rm -rf docs && typedoc --out docs && touch docs/.nojekyll",
     "test": "tman -r ts-node/register 'test/**/*.ts'",
     "test-cov": "istanbul cover _tman -- 'test/**/*.ts' -r ts-node/register",
@@ -46,5 +43,8 @@
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
-  ]
+  ],
+  "dependencies": {
+    "buffer": "^6.0.3"
+  }
 }

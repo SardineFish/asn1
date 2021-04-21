@@ -6,6 +6,7 @@
 import { strictEqual } from 'assert'
 import { suite, it } from 'tman'
 import { BufferVisitor } from '../src/index'
+import { Buffer } from "buffer";
 
 suite('common', function () {
   it('BufferVisitor', function () {

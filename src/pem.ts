@@ -3,7 +3,7 @@
 //
 // **License:** MIT
 
-import { inspect } from 'util'
+import { Buffer } from "buffer";
 
 const pemLineLength = 64
 const pemStart = '-----BEGIN '
@@ -153,10 +153,6 @@ export class PEM {
       body: this.body,
       headers: this.headers,
     }
-  }
-
-  protected [inspect.custom] (_depth: any, options: any): string {
-    return `<${this.constructor.name} ${inspect(this.toJSON(), options)}>`
   }
 }
 

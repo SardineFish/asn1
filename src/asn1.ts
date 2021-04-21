@@ -3,8 +3,8 @@
 //
 // **License:** MIT
 
-import { inspect } from 'util'
 import { BufferVisitor } from './common'
+import { Buffer } from "buffer";
 
 /**
  * Template is use to create schema of ASN.1 object for `asn1.validate` method.
@@ -1084,13 +1084,6 @@ export class ASN1 {
       tag: this.class === Class.UNIVERSAL ? Tag[this.tag] : this.tag,
       value,
     }
-  }
-
-  protected [inspect.custom] (_depth: any, options: any): string {
-    if (options.depth <= 2) {
-      options.depth = 10
-    }
-    return `<${this.constructor.name} ${inspect(this.toJSON(), options)}>`
   }
 }
 

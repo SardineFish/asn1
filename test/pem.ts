@@ -7,6 +7,7 @@ import fs from 'fs'
 import { strictEqual, ok, throws } from 'assert'
 import { suite, it } from 'tman'
 import { PEM } from '../src/index'
+import { Buffer } from "buffer";
 
 suite('PEM', function () {
   it('should work', function () {

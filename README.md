@@ -1,30 +1,25 @@
-# [@fidm/asn1](https://github.com/fidm/asn1)
-ASN.1/DER, PEM for Node.js.
+# [@sardinefish/asn1](https://github.com/fidm/asn1)
+ASN.1/DER, PEM for Browser.
 
-[![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads][downloads-image]][downloads-url]
+Forked from [@fidm/asn1](https://github.com/fidm/asn1) and modified to run on browser.
 
 ## Install
 
 ```
-npm i --save @fidm/asn1
+npm i --save @sardinefish/asn1
 ```
 
 ## Documentation
 
 https://fidm.github.io/asn1/
 
-## Dependents
-
-[@fidm/x509](https://github.com/fidm/x509)
 
 ## Example
 
 ### Parse a private key from PEM file with ASN.1 Template
 ```js
 const fs = require('fs')
-const { PEM, ASN1, Class, Tag } = require('@fidm/asn1')
+const { PEM, ASN1, Class, Tag } = require('@sardinefish/asn1')
 
 // ASN.1 Template https://tools.ietf.org/html/rfc5208
 const privateKeyValidator = {
@@ -84,7 +79,7 @@ console.log(captures)
 
 ### Build PKCS#8 private key ASN1 object from PKCS#1 private key ASN1 object
 ```js
-const { ASN1, Class, Tag } = require('@fidm/asn1')
+const { ASN1, Class, Tag } = require('@sardinefish/asn1')
 
 const rsaPrivateKeyASN1 = getSomeRSAPrivateKeyASN1()
 const privateKeyASN1 = ASN1.Seq([
@@ -105,7 +100,7 @@ const privateKeyASN1 = ASN1.Seq([
 ### Parse a certificate from PEM file
 ```js
 const fs = require('fs')
-const { PEM, ASN1 } = require('@fidm/asn1')
+const { PEM, ASN1 } = require('@sardinefish/asn1')
 
 const pems = PEM.parse(fs.readFileSync('./test/cert/github.crt'))
 const asn1 = ASN1.fromDER(pems[0].body)
